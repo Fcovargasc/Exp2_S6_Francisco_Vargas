@@ -25,7 +25,6 @@ public class Exp2_S6_Francisco_Vargas {
         System.out.println("1 para Reserva de entradas 2 para Compra de entradas 3 Para modificar una venta existente 4 imprimir boletas");
         opcion=scanner.nextInt();
         if (opcion3==2 && opcion==2){
-                        System.out.println(" hola funciono");
                     acomuladorAsiento=" ";
                     acomulador=0;}
         }while(opcion>4||opcion<1);
@@ -44,12 +43,21 @@ public class Exp2_S6_Francisco_Vargas {
                     numeroAsiento=scanner.next();
                       if (acomuladorAsiento.contains(numeroAsiento)){
                     System.out.println("asiento no disponible");
-                    
+                    i--;
+                    acomuladorAsiento=acomuladorAsiento.replace(numeroAsiento, remplazo);
+                          System.out.println("OWO "+acomuladorAsiento);
+                    acomulador-=valorEntrada;
+                    cantidadEntrada--;
              }
                     acomuladorAsiento+=numeroAsiento+" ";
                     cantidadEntrada++;
-                    acomulador+=valorEntrada;//breakpoint 1  
+                    acomulador+=valorEntrada;//breakpoint 1
+                    
               }
+                System.out.println("entradas reservadas");
+                System.out.println("para continuar precione opcion 2  para volver al menu principal");
+                System.out.println("despues seleccionar opcion 4 para imprimir boleta y hacer efectiva la reserva");
+                System.out.println("para salir precione opcion 1 si sale sin imprimir la boleta la reserva se cancelara");
              }
             case 2 ->{
                 System.out.println("¿Cuantas entradas quiere comprar?");
@@ -76,7 +84,7 @@ public class Exp2_S6_Francisco_Vargas {
             case 3 -> {
                
                 if (numeroEntradas ==0)
-                {System.out.println("primero debe ingresar un Asiento para poder modificar\n");
+                {System.out.println("primero debe reservar un Asiento para poder modificar");
                 break;
                      }
                  System.out.println("ingrese asiento que quiere modificar");
@@ -106,6 +114,8 @@ public class Exp2_S6_Francisco_Vargas {
                     System.out.println("ubicacion de Asientos: "+ acomuladorAsiento);
                     System.out.println("cantidad de entradas: "+ cantidadEntrada);
                     System.out.println("valor total: " + acomulador);
+                    acomuladorAsiento=" ";
+                    acomulador=0;
                 }
                 }
                         
