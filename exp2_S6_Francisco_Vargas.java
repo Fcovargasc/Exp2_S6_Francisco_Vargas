@@ -122,17 +122,15 @@ public class exp2_S6_Francisco_Vargas {
                 {System.out.println("primero debe reservar un Asiento para poder modificar");
                 break;
                      }
-                 System.out.println("ingrese asiento que quiere modificar");
+                 System.out.println("ingrese asiento que quiere eliminar");
                     asientoModificar=scanner.next();
                   
                   if(acomuladorAsiento.contains(asientoModificar)){
-                      System.out.println("presione 1 para Eliminar 2 Para cambiar");
-                      opcion2=scanner.nextInt();}
-                  if(opcion2==1){
                   acomuladorAsiento=acomuladorAsiento.replace(asientoModificar, remplazo);//breakpoint 3
-                      }
-                  
-                           
+                      System.out.println("asiento modificado exitosamente: "+acomuladorAsiento);
+                      acomulador-=valorEntrada;
+                    cantidadEntrada--;
+                      }                
                   else{
                       System.out.println("Asiento no esta reservado");}
             }
