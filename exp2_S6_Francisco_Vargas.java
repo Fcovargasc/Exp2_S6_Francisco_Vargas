@@ -29,7 +29,7 @@ public class exp2_S6_Francisco_Vargas {
         }while(opcion>4||opcion<1);
         
         switch (opcion){
-            
+           
             case 1 ->{
                
                 System.out.println("¿Cuantas entradas quiere reservar?");
@@ -43,7 +43,7 @@ public class exp2_S6_Francisco_Vargas {
                       if (acomuladorAsiento.contains(numeroAsiento)){
                     System.out.println("asiento no disponible");
                     i--;
-                    acomuladorAsiento=acomuladorAsiento.replace(numeroAsiento, remplazo);//BReakpoint 4
+                    acomuladorAsiento=acomuladorAsiento.replace(numeroAsiento, remplazo);//Breakpoint 4
                           
                     acomulador-=valorEntrada;
                     cantidadEntrada--;
@@ -62,9 +62,9 @@ public class exp2_S6_Francisco_Vargas {
                 
                 
                 if(cantidadEntrada>=1){
-                    System.out.println("Ssi continua se borrara su reserva si quiere continuar con la reserva imprima su boleta  ");
+                    System.out.println("Si continua se borrara su reserva si quiere continuar con la reserva imprima su boleta  ");
                     do{
-                    System.out.println("1 para imprimir 2 para continuar");
+                    System.out.println("1 para imprimir Boleta 2 para continuar eliminando reserva");
                     opcion2=scanner.nextInt();}while(opcion2<1||opcion2>2);
                      if (opcion2==1){
                     System.out.println("ubicacion de Asientos: "+ acomuladorAsiento);
@@ -82,7 +82,7 @@ public class exp2_S6_Francisco_Vargas {
                 
                 }
                 
-                 System.out.println("¿Cuantas entradas quiere reservar?");
+                 System.out.println("¿Cuantas entradas quiere comprar?");
                 numeroEntradas=scanner.nextInt();
                 System.out.println(asientos);
                 for (int i = 1; i <= numeroEntradas; i++) {
