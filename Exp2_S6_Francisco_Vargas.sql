@@ -1,3 +1,4 @@
+-- caso 1
 SELECT 
     P.ID_PROFESIONAL AS "ID PROFESIONAL",
     P.APPATERNO || ' ' || P.APMATERNO || ' ' || P.NOMBRE AS "PROFESIONAL",
@@ -78,9 +79,9 @@ GROUP BY
     P.ID_PROFESIONAL, P.NUMRUN_PROF, P.SUELDO
 ORDER BY 
     P.ID_PROFESIONAL;
-    -----------------------------------------
+   
     --UPDATE para la actualizacion de sueldos correspondiente 
-   UPDATE PROFESIONAL P
+UPDATE PROFESIONAL P
 SET P.SUELDO = 
     CASE
         WHEN (SELECT SUM(A.HONORARIO)
@@ -103,11 +104,11 @@ SET P.PUNTAJE =
     END
 WHERE 
     P.ID_PROFESIONAL IN (SELECT A.ID_PROFESIONAL
-                            FROM ASESORIA A
-                            WHERE EXTRACT(YEAR FROM A.FIN_ASESORIA) = EXTRACT(YEAR FROM SYSDATE) - 1
-                            AND EXTRACT(MONTH FROM A.FIN_ASESORIA) = 3); 
-   --------------------------------------
-   --consulta despues de la actualizacion de sueldos 
+    FROM ASESORIA A
+        WHERE EXTRACT(YEAR FROM A.FIN_ASESORIA) = EXTRACT(YEAR FROM SYSDATE) - 1
+            AND EXTRACT(MONTH FROM A.FIN_ASESORIA) = 3); 
+
+--consulta despues de la actualizacion de sueldos 
  SELECT 
     SUM(A.HONORARIO) AS "HONORARIO",
     P.ID_PROFESIONAL AS "ID PROFESIONAL",
